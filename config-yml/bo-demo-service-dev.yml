@@ -1,0 +1,42 @@
+server:
+  port: 8083
+  servletPath: /bo-demo-service
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@10.15.191.142:1521:ORCL
+    username: CHEQUES
+    password: ne0ris
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+  jpa:
+    database-platform: org.hibernate.dialect.Oracle10gDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  cloud:
+    config:
+      failFast: true
+      retry:
+        ## Intervalo de tiempo inicial entre cada repeticion
+        initialInterval: 6000
+        ## Incremento exponencial del tiempo de intervalo inicial
+        multiplier: 1.5
+        ## Tiempo maximo al que puede crecer el intervalo
+        maxInterval: 30000
+logging:
+  level:
+    org:
+      springframework:
+        web:
+          servlet:
+            DispatcherServlet: INFO
+app:
+  message:
+    error:
+      demo1: ERROR demo1
+      demo2: ERROR demo2
+  propertie:
+    test: Valor Propiedad Test
+global:
+  message:
+    success: OK
+    error: ERROR GLOBAL
