@@ -31,9 +31,7 @@ logging:
             DispatcherServlet: INFO
 app:
   message:
-    error:
-      demo1: ERROR demo1
-      demo2: ERROR demo2
+    demo1: ERROR demo1
   propertie:
     test: Valor Propiedad Test
 global:
