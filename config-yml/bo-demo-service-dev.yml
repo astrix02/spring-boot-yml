@@ -31,13 +31,13 @@ logging:
             DispatcherServlet: INFO
 app:
   message:
-    demo1: ERROR demo1
+    error: ERROR APP
+  code:
+    error: ERROR-01
   propertie:
     test: Valor Propiedad Test
 global:
   message:
-    success: OK
     error: ERROR GLOBAL
   code:
-      success: OK-00
       error: ERROR-00
