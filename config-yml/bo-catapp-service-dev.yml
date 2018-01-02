@@ -1,0 +1,43 @@
+server:
+  port: 8085
+  servletPath: /bo-catapp-service
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@180.228.123.7:1630:CAJEDB
+    username: deifpcaj
+    password: deifpcaj_desa
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+  jpa:
+    database-platform: org.hibernate.dialect.Oracle10gDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  cloud:
+    mx.stmx.bo.catapp.config:
+      failFast: true
+      retry:
+        ## Intervalo de tiempo inicial entre cada repeticion
+        initialInterval: 6000
+        ## Incremento exponencial del tiempo de intervalo inicial
+        multiplier: 1.5
+        ## Tiempo maximo al que puede crecer el intervalo
+        maxInterval: 30000
+logging:
+  level:
+    org:
+      springframework:
+        web:
+          servlet:
+            DispatcherServlet: INFO
+app:
+  message:
+    error: ERROR APP
+  code:
+    error: ERROR-01
+  propertie:
+    test: Valor Propiedad Test
+global:
+  message:
+    error: ERROR GLOBAL
+  code:
+      error: ERROR-00
