@@ -13,7 +13,6 @@ spring:
     hibernate:
       ddl-auto: none
   cloud:
-    mx.stmx.bo.catapp.config:
       failFast: true
       retry:
         ## Intervalo de tiempo inicial entre cada repeticion
